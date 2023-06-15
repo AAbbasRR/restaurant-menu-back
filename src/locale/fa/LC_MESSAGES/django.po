@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-15 10:01+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: app_menu/models/category.py:13 app_menu/models/food.py:24
+msgid "Category"
+msgstr "دسته"
+
+#: app_menu/models/category.py:14
+msgid "Categories"
+msgstr "دسته ها"
+
+#: app_menu/models/category.py:18 app_menu/models/food.py:28
+msgid "Name"
+msgstr "نام"
+
+#: app_menu/models/category.py:22
+msgid "Icon"
+msgstr "آیکون"
+
+#: app_menu/models/category.py:26 app_menu/models/food.py:39
+msgid "Is Active"
+msgstr "وضعیت فعال بودن"
+
+#: app_menu/models/food.py:16
+msgid "Food"
+msgstr "غذا"
+
+#: app_menu/models/food.py:17
+msgid "Foods"
+msgstr "غذاها"
+
+#: app_menu/models/food.py:31
+msgid "Material"
+msgstr "رسپی"
+
+#: app_menu/models/food.py:35
+msgid "Image"
+msgstr "عکس"
+
+#: app_menu/models/food.py:44
+msgid "Price"
+msgstr "قیمت"
+
+#: utils/url_handlers.py:11
+msgid "URL Not Found."
+msgstr "پیدا نشد"
+
+#: utils/url_handlers.py:17
+msgid "Server Error."
+msgstr "مشکل از سمت سرور"
