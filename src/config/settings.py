@@ -21,7 +21,6 @@ INSTALLED_APPS = [
     # 3rd party apps
     'corsheaders',
     'rest_framework',
-    'translation_manager',
     # local apps
     'app_menu'
 ]
