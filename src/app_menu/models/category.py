@@ -26,6 +26,9 @@ class Category(models.Model):
         verbose_name=_('Is Active')
     )
 
+    def __str__(self):
+        return self.name
+
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         try:
             old_obj = Category.objects.get(id=self.id)

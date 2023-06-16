@@ -14,6 +14,7 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryModel
         fields = (
+            'id',
             'name',
 
             'icon_link',
@@ -38,6 +39,7 @@ class ListFoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodModel
         fields = (
+            'id',
             'name',
             'material',
             'price',

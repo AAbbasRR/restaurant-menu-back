@@ -44,6 +44,9 @@ class Food(models.Model):
         verbose_name=_('Price')
     )
 
+    def __str__(self):
+        return self.name
+
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         try:
             old_obj = Food.objects.get(id=self.id)
