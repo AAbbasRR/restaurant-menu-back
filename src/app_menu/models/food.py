@@ -43,6 +43,10 @@ class Food(models.Model):
         validators=[MinValueValidator(0)],
         verbose_name=_('Price')
     )
+    location = models.PositiveIntegerField(
+        default=1,
+        verbose_name=_('Location')
+    )
 
     def __str__(self):
         return self.name

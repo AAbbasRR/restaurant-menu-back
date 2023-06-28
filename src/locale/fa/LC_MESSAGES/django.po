@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 10:01+0330\n"
+"POT-Creation-Date: 2023-06-28 11:31+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: app_menu/models/category.py:13 app_menu/models/food.py:24
 msgid "Category"
 msgstr "دسته"
@@ -36,6 +37,10 @@ msgstr "آیکون"
 #: app_menu/models/category.py:26 app_menu/models/food.py:39
 msgid "Is Active"
 msgstr "وضعیت فعال بودن"
+
+#: app_menu/models/category.py:30 app_menu/models/food.py:48
+msgid "Location"
+msgstr "جایگاه"
 
 #: app_menu/models/food.py:16
 msgid "Food"

@@ -13,4 +13,4 @@ class ListFoodsView(generics.ListAPIView):
     permission_classes = [AllowAnyPermission]
     versioning_class = BaseVersioning
     serializer_class = ListFoodSerializer
-    queryset = FoodModel.objects.filter(is_active=True)
+    queryset = FoodModel.objects.filter(is_active=True).order_by('location')

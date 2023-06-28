@@ -25,6 +25,10 @@ class Category(models.Model):
         default=True,
         verbose_name=_('Is Active')
     )
+    location = models.PositiveIntegerField(
+        default=1,
+        verbose_name=_('Location')
+    )
 
     def __str__(self):
         return self.name

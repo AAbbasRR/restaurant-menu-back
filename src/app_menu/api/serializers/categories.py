@@ -53,7 +53,7 @@ class ListCategoriesSerializer(serializers.ModelSerializer):
         self.request = self.context.get('request')
 
     def get_category_foods(self, obj):
-        return FoodSerializer(obj.category_foods.filter(is_active=True), many=True, read_only=True, context=self.context).data
+        return FoodSerializer(obj.category_foods.filter(is_active=True).order_by('location'), many=True, read_only=True, context=self.context).data
 
     def get_icon_link(self, obj):
         return obj.get_icon_url(self.request)

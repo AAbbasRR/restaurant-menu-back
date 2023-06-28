@@ -13,4 +13,4 @@ class ListCategoriesView(generics.ListAPIView):
     permission_classes = [AllowAnyPermission]
     versioning_class = BaseVersioning
     serializer_class = ListCategoriesSerializer
-    queryset = CategoryModel.objects.filter(is_active=True)
+    queryset = CategoryModel.objects.filter(is_active=True).order_by('location')
