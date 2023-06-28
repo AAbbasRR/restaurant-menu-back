@@ -28,6 +28,8 @@ class Food(models.Model):
         verbose_name=_('Name')
     )
     material = models.TextField(
+        null=True,
+        blank=True,
         verbose_name=_('Material')
     )
     image = models.ImageField(
