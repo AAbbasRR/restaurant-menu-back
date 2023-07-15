@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-28 11:31+0330\n"
+"POT-Creation-Date: 2023-07-15 12:33+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app_menu/apps.py:8
+msgid "App Menu"
+msgstr "اپلیکیشن منو"
+
+#: app_menu/apps.py:9
+msgid "App Menus"
+msgstr "اپلیکیشن منو"
 
 #: app_menu/models/category.py:13 app_menu/models/food.py:24
 msgid "Category"
@@ -34,11 +42,11 @@ msgstr "نام"
 msgid "Icon"
 msgstr "آیکون"
 
-#: app_menu/models/category.py:26 app_menu/models/food.py:39
+#: app_menu/models/category.py:26 app_menu/models/food.py:41
 msgid "Is Active"
 msgstr "وضعیت فعال بودن"
 
-#: app_menu/models/category.py:30 app_menu/models/food.py:48
+#: app_menu/models/category.py:30 app_menu/models/food.py:50
 msgid "Location"
 msgstr "جایگاه"
 
@@ -50,17 +58,57 @@ msgstr "غذا"
 msgid "Foods"
 msgstr "غذاها"
 
-#: app_menu/models/food.py:31
+#: app_menu/models/food.py:33
 msgid "Material"
 msgstr "رسپی"
 
-#: app_menu/models/food.py:35
+#: app_menu/models/food.py:37 app_menu/models/main_page.py:18
 msgid "Image"
 msgstr "عکس"
 
-#: app_menu/models/food.py:44
+#: app_menu/models/food.py:46
 msgid "Price"
 msgstr "قیمت"
+
+#: app_menu/models/main_page.py:13 app_menu/models/main_page.py:14
+msgid "Main Page"
+msgstr "صفحه اصلی"
+
+#: app_menu/models/settings.py:23
+msgid "Setting"
+msgstr "تنظیمات رستوران"
+
+#: app_menu/models/settings.py:24
+msgid "Settings"
+msgstr "تنظیمات رستوران"
+
+#: app_menu/models/settings.py:29
+msgid "Title"
+msgstr "عنوان"
+
+#: app_menu/models/settings.py:33
+msgid "Value"
+msgstr "مقدار"
+
+#: utils/data_list.py:4
+msgid "Phone Number"
+msgstr "شماره تماس"
+
+#: utils/data_list.py:5
+msgid "Address"
+msgstr "آدرس"
+
+#: utils/data_list.py:6
+msgid "Instagram"
+msgstr "آیدی اینستاگرام"
+
+#: utils/data_list.py:7
+msgid "Start Time"
+msgstr "زمان شروع به کار"
+
+#: utils/data_list.py:8
+msgid "End Time"
+msgstr "زمان اتمام کار"
 
 #: utils/url_handlers.py:11
 msgid "URL Not Found."

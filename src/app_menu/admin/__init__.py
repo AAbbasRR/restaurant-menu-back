@@ -1,2 +1,6 @@
-from .category import CategoryModel
-from .food import FoodModel
+from . import (
+    category,
+    food,
+    main_page,
+    settings
+)

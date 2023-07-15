@@ -121,7 +121,11 @@ MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media')
 )
 # Internationalization
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGES = (
+    ('fa', 'Persian'),
+)
+DEFAULT_LANGUAGE = 1
+LANGUAGE_CODE = 'fa'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
