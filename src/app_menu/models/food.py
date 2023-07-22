@@ -32,7 +32,7 @@ class Food(models.Model):
         blank=True,
         verbose_name=_('Material')
     )
-    image = models.ImageField(
+    image = models.FileField(
         upload_to=food_image_directory_path,
         verbose_name=_('Image')
     )
