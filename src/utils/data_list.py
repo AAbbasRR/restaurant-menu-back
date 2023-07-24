@@ -6,4 +6,5 @@ site_settings = [
     ('INSTAGRAM', _('Instagram')),
     ('StartTime', _('Start Time')),
     ('EndTime', _('End Time')),
+    ('MenuImage', _('Menu Image')),
 ]

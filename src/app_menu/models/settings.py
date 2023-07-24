@@ -17,6 +17,9 @@ class SettingsManager(models.Manager):
             obj.save()
         return obj
 
+def setting_image_directory_path(instance, filename):
+    return 'setting_images/{0}'.format(filename)
+
 
 class Settings(models.Model):
     class Meta:
@@ -31,6 +34,11 @@ class Settings(models.Model):
     value = models.CharField(
         max_length=100,
         verbose_name=_('Value')
+    )
+    image = models.ImageField(
+        null=True,
+        upload_to=setting_image_directory_path,
+        verbose_name=_('Image')
     )
 
     objects = SettingsManager()

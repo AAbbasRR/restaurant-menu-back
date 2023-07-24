@@ -53,14 +53,14 @@ class Food(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        try:
-            old_obj = Food.objects.get(id=self.id)
-            if old_obj.image != self.image:
-                old_obj.image.delete()
-        except:
-            pass
-        return super(Food, self).save(force_insert, force_update, using, update_fields)
+    # def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+    #     try:
+    #         old_obj = Food.objects.get(id=self.id)
+    #         if old_obj.image != self.image:
+    #             old_obj.image.delete()
+    #     except:
+    #         pass
+    #     return super(Food, self).save(force_insert, force_update, using, update_fields)
 
     def delete(self, using=None, keep_parents=False):
         self.image.delete()

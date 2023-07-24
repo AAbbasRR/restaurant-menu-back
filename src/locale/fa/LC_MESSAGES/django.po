@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-15 12:33+0330\n"
+"POT-Creation-Date: 2023-07-24 17:34+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,8 @@ msgstr "غذاها"
 msgid "Material"
 msgstr "رسپی"
 
-#: app_menu/models/food.py:37 app_menu/models/main_page.py:18
+#: app_menu/models/food.py:37 app_menu/models/main_page.py:19
+#: app_menu/models/settings.py:41
 msgid "Image"
 msgstr "عکس"
 
@@ -70,23 +71,23 @@ msgstr "عکس"
 msgid "Price"
 msgstr "قیمت"
 
-#: app_menu/models/main_page.py:13 app_menu/models/main_page.py:14
+#: app_menu/models/main_page.py:14 app_menu/models/main_page.py:15
 msgid "Main Page"
 msgstr "صفحه اصلی"
 
-#: app_menu/models/settings.py:23
+#: app_menu/models/settings.py:26
 msgid "Setting"
 msgstr "تنظیمات رستوران"
 
-#: app_menu/models/settings.py:24
+#: app_menu/models/settings.py:27
 msgid "Settings"
 msgstr "تنظیمات رستوران"
 
-#: app_menu/models/settings.py:29
+#: app_menu/models/settings.py:32
 msgid "Title"
 msgstr "عنوان"
 
-#: app_menu/models/settings.py:33
+#: app_menu/models/settings.py:36
 msgid "Value"
 msgstr "مقدار"
 
@@ -109,6 +110,12 @@ msgstr "زمان شروع به کار"
 #: utils/data_list.py:8
 msgid "End Time"
 msgstr "زمان اتمام کار"
+
+#: utils/data_list.py:9
+#, fuzzy
+#| msgid "Image"
+msgid "Menu Image"
+msgstr "عکس"
 
 #: utils/url_handlers.py:11
 msgid "URL Not Found."
