@@ -49,11 +49,14 @@ class Settings(models.Model):
     objects = SettingsManager()
     
     def get_image_url(self, request):
-        if self.image is None or self.image == "":
+        try:
+            if self.image is None or self.image == "":
+                return None
+            else:
+                host = request.get_host()
+                protocol = request.build_absolute_uri().split(host)[0]
+                protocol = protocol if DEBUG else protocol.replace("http", "https") if protocol.split(":")[0] == "http" else protocol
+                website_url = protocol + host
+                return website_url + self.image.url
+        except:
             return None
-        else:
-            host = request.get_host()
-            protocol = request.build_absolute_uri().split(host)[0]
-            protocol = protocol if DEBUG else protocol.replace("http", "https") if protocol.split(":")[0] == "http" else protocol
-            website_url = protocol + host
-            return website_url + self.image.url
