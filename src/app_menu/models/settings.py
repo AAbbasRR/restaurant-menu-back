@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext as _
 
+from config.settings import DEBUG
+
 from utils.data_list import site_settings
 
 
@@ -33,12 +35,25 @@ class Settings(models.Model):
     )
     value = models.CharField(
         max_length=100,
+        null=True,
+        blank=True,
         verbose_name=_('Value')
     )
     image = models.ImageField(
         null=True,
+        blank=True,
         upload_to=setting_image_directory_path,
         verbose_name=_('Image')
     )
 
     objects = SettingsManager()
+    
+    def get_image_url(self, request):
+        if self.image is None or self.image == "":
+            return None
+        else:
+            host = request.get_host()
+            protocol = request.build_absolute_uri().split(host)[0]
+            protocol = protocol if DEBUG else protocol.replace("http", "https") if protocol.split(":")[0] == "http" else protocol
+            website_url = protocol + host
+            return website_url + self.image.url

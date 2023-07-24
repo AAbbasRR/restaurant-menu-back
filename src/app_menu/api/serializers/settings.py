@@ -10,4 +10,5 @@ class MenuInfoSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'value',
+            'get_image_url'
         )
