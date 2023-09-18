@@ -54,10 +54,6 @@ class Category(models.Model):
                 self.location = last_obj.location + 1
         return super().save(force_insert, force_update, using, update_fields)
 
-    def delete(self, using=None, keep_parents=False):
-        self.icon.delete()
-        super(Category, self).delete(using, keep_parents)
-
     def get_icon_url(self, request):
         if self.icon is None or self.icon == "":
             return None

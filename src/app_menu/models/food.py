@@ -57,7 +57,7 @@ class Food(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         if self.pk is not None:
-            onother_location = Food.objects.filter(category=self.category, location=self.location).first()
+            onother_location = Food.objects.filter(category=self.category, location=self.location).exclude(pk=self.pk).first()
             if onother_location is not None:
                 old_obj = Food.objects.filter(pk=self.pk).first()
                 new_obj = super().save(force_insert, force_update, using, update_fields)
@@ -70,10 +70,6 @@ class Food(models.Model):
                 last_obj = Food.objects.filter(category=self.category).order_by("location").last()
                 self.location = last_obj.location + 1
         return super().save(force_insert, force_update, using, update_fields)
-
-    def delete(self, using=None, keep_parents=False):
-        self.image.delete()
-        super(Food, self).delete(using, keep_parents)
 
     def get_image_url(self, request):
         try:

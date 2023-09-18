@@ -113,12 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL = 'src/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'src/static/')
 # Media files (Images, Files)
-MEDIA_URL = '/media/'
+MEDIA_URL = 'src/media/'
 MEDIA_ROOT = (
-    os.path.join(BASE_DIR, 'media')
+    os.path.join(BASE_DIR, 'src/media')
 )
 # Internationalization
 LANGUAGES = (
