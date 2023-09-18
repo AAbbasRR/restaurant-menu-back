@@ -5,8 +5,9 @@ from app_menu.models import FoodModel
 
 class FoodsAdmin(admin.ModelAdmin):
     list_display = (
-        'category',
         'name',
+        'category',
+        'location',
         'material',
         'is_active',
         'price',

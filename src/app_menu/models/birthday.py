@@ -4,39 +4,15 @@ from django.core.validators import MinValueValidator
 
 from config.settings import DEBUG
 
-from app_menu.models import CategoryModel
 
-
-def food_image_directory_path(instance, filename):
-    return 'food_images/{0}'.format(filename)
-
-
-class Food(models.Model):
+class Birthday(models.Model):
     class Meta:
-        verbose_name = _('Food')
-        verbose_name_plural = _('Foods')
+        verbose_name = _('Birthday')
+        verbose_name_plural = _('Birthdays')
 
-    category = models.ForeignKey(
-        CategoryModel,
-        on_delete=models.SET_NULL,
-        related_name='category_foods',
-        null=True,
-        verbose_name=_('Category')
-    )
     name = models.CharField(
         max_length=100,
         verbose_name=_('Name')
-    )
-    material = models.TextField(
-        null=True,
-        blank=True,
-        verbose_name=_('Material')
-    )
-    image = models.FileField(
-        upload_to=food_image_directory_path,
-        null=True,
-        blank=True,
-        verbose_name=_('Image')
     )
     is_active = models.BooleanField(
         default=True,
@@ -46,6 +22,11 @@ class Food(models.Model):
         default=0,
         validators=[MinValueValidator(0)],
         verbose_name=_('Price')
+    )
+    description = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name=_('Description')
     )
     location = models.PositiveIntegerField(
         default=1,
@@ -57,23 +38,46 @@ class Food(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         if self.pk is not None:
-            onother_location = Food.objects.filter(category=self.category, location=self.location).first()
+            onother_location = Birthday.objects.filter(location=self.location).first()
             if onother_location is not None:
-                old_obj = Food.objects.filter(pk=self.pk).first()
+                old_obj = Birthday.objects.filter(pk=self.pk).first()
                 new_obj = super().save(force_insert, force_update, using, update_fields)
                 onother_location.location = old_obj.location
                 onother_location.save()
                 return new_obj
         else:
-            onother_location = Food.objects.filter(category=self.category, location=self.location).first()
+            onother_location = Birthday.objects.filter(location=self.location).first()
             if onother_location is not None:
-                last_obj = Food.objects.filter(category=self.category).order_by("location").last()
+                last_obj = Birthday.objects.filter(category=self.category).order_by("location").last()
                 self.location = last_obj.location + 1
         return super().save(force_insert, force_update, using, update_fields)
 
-    def delete(self, using=None, keep_parents=False):
-        self.image.delete()
-        super(Food, self).delete(using, keep_parents)
+
+def birthday_images_directory_path(instance, filename):
+    return 'birthday_images/{0}'.format(filename)
+        
+
+class BirthdayImages(models.Model):
+    class Meta:
+        verbose_name = _('Birthday Image')
+        verbose_name_plural = _('Birthday Images')
+
+    birthday = models.ForeignKey(
+        Birthday,
+        on_delete=models.CASCADE,
+        related_name="birthday_images",
+        verbose_name=_('Birthday')
+    )
+    image = models.FileField(
+        upload_to=birthday_images_directory_path,
+        null=True,
+        blank=True,
+        verbose_name=_('Image')
+    )
+
+
+    def __str__(self):
+        return self.name
 
     def get_image_url(self, request):
         try:

@@ -29,18 +29,30 @@ class Category(models.Model):
         default=1,
         verbose_name=_('Location')
     )
+    description = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name=_('Description')
+    )
 
     def __str__(self):
         return self.name
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        try:
-            old_obj = Category.objects.get(id=self.id)
-            if old_obj.image != self.icon:
-                old_obj.image.delete()
-        except:
-            pass
-        return super(Category, self).save(force_insert, force_update, using, update_fields)
+        if self.pk is not None:
+            onother_location = Category.objects.filter(location=self.location).exclude(pk=self.pk).first()
+            if onother_location is not None:
+                old_obj = Category.objects.filter(pk=self.pk).first()
+                new_obj = super().save(force_insert, force_update, using, update_fields)
+                onother_location.location = old_obj.location
+                onother_location.save()
+                return new_obj
+        else:
+            onother_location = Category.objects.filter(location=self.location).first()
+            if onother_location is not None:
+                last_obj = Category.objects.order_by("location").last()
+                self.location = last_obj.location + 1
+        return super().save(force_insert, force_update, using, update_fields)
 
     def delete(self, using=None, keep_parents=False):
         self.icon.delete()

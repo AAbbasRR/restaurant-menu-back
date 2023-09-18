@@ -12,4 +12,6 @@ urlpatterns = [
     path('main/images/', MainPageView.as_view(), name='user_list_main_page_images'),
     # settings
     path('info/', MenuInfoView.as_view(), name='user_list_settings'),
+    # birthday
+    path('birthday/', ListBirthdaysView.as_view(), name='user_list_birthdays'),
 ]

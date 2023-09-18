@@ -43,6 +43,7 @@ class ListCategoriesSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'description',
 
             'category_foods',
             'icon_link',

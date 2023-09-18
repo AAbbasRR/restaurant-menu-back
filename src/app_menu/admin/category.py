@@ -6,6 +6,7 @@ from app_menu.models import CategoryModel
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
+        'location',
         'is_active',
     )
     search_fields = (
