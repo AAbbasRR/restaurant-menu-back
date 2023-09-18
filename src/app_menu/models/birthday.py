@@ -77,7 +77,7 @@ class BirthdayImages(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.image.url
 
     def get_image_url(self, request):
         try:

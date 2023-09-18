@@ -22,18 +22,18 @@ class MainPage(models.Model):
     def __str__(self):
         return self.image.url
 
-    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        try:
-            old_obj = MainPage.objects.get(id=self.id)
-            if old_obj.image != self.image:
-                old_obj.image.delete()
-        except:
-            pass
-        return super(MainPage, self).save(force_insert, force_update, using, update_fields)
+    # def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+    #     try:
+    #         old_obj = MainPage.objects.get(id=self.id)
+    #         if old_obj.image != self.image:
+    #             old_obj.image.delete()
+    #     except:
+    #         pass
+    #     return super(MainPage, self).save(force_insert, force_update, using, update_fields)
 
-    def delete(self, using=None, keep_parents=False):
-        self.image.delete()
-        super(MainPage, self).delete(using, keep_parents)
+    # def delete(self, using=None, keep_parents=False):
+    #     self.image.delete()
+    #     super(MainPage, self).delete(using, keep_parents)
 
     def get_image_tag(self):
         return mark_safe('<img src="/media/%s"  width="150" />' % self.image)
